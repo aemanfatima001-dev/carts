@@ -1,5 +1,4 @@
 import Calculator from "../Calculator";
-
 function App() {
   return (
     <div>
@@ -8,5 +7,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
