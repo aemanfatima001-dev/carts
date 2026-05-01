@@ -1,11 +1,6 @@
-import Calculator from "./calculator";
-function App() {
-  return (
-    <div>
-      <h1> Calculator</h1>
-      <Calculator />
-    </div>
-  );
-}
+import { useRef } from  "./components/hooks/useRefs";
 
-export default App;
+
+export const App = () => {
+  return <useRef />
+}
