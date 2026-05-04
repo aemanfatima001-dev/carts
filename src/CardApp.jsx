@@ -10,7 +10,7 @@ function CardApp() {
     setInput("");
   };
 
-  const removeCard = (index) => {
+  const removeCard = (index) => { 
     const newCards = cards.filter((_, i) => i !== index);
     setCards(newCards);
   };
@@ -20,13 +20,14 @@ function CardApp() {
       <h2>Card App</h2>
       
       <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
-      <input type="text" value="password"/>
-
-      <button onClick={addCard}>Add</button>
+  type="text"
+  autoComplete="new-password"
+  placeholder="Enter text"
+  value={input}
+  onChange={(e) => setInput(e.target.value)}
+/>
+    
+     <button onClick={addCard}>Add</button>
 
       {cards.map((card, index) => (
         <div key={index} style={{ border: "1px solid black", margin: "10px", padding: "10px" }}>
