@@ -182,3 +182,105 @@
     border-right-color: var(--border);
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #730296;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 40%;
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.card-form {
+  background: rgb(118, 5, 108);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(35, 6, 61, 0.1);
+}
+
+.card-form h2 {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.card-form input,
+.card-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #921919;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.card-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.card-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #a73497;
+  color: rgb(41, 7, 60);
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.card-form button:hover {
+  background: #71096a;
+}
+
+.cards-container {
+  margin-top: 30px;
+}
+
+.card {
+  background: rgb(142, 68, 179);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #0d0110;
+}
+
+.card p {
+  color: #10010f;
+  margin-bottom: 15px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  color: rgb(9, 1, 15);
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #09338e;
+}
+
+.delete-btn {
+  background: #910404;
+}
