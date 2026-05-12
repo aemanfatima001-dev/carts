@@ -1,7 +1,7 @@
-import   CardApp   from "./CardApp";
+import   Menu   from "./Menu";
 
 function App() {
-  return <h1>Card App</h1>;
+  return <h1>Resturant Menu</h1>;
 }
 
-export default CardApp;
+export default Menu;
