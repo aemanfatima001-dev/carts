@@ -1,3 +1,4 @@
+import { initAsyncCompiler } from "sass";
 import   Menu   from "./Menu";
 
 function App() {

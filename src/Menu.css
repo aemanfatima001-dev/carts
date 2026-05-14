@@ -232,3 +232,47 @@
 .text-content {
   max-width: 70%;
 }
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: white;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 12px;
+
+  list-style: none;
+}
+
+.cart-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cart-text {
+  flex: 1;
+}
+.cart-item {
+  gap: 20px;
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.cart-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cart-text {
+  display: flex;
+  flex-direction: column;
+}
