@@ -11,16 +11,28 @@ function Menu() {
     
     const [cart, setCart] = useState([]);
 
-    const addToCart = (item) => {
-        setCart([...cart, item]);
-    };
+const addToCart = (item) => {
+    const existingItem = cart.find((cartItem) => cartItem.id === item.id);
+
+    if (existingItem) {
+        setCart(
+            cart.map((cartItem) =>
+                cartItem.id === item.id
+                    ? { ...cartItem, quantity: cartItem.quantity + 1 }
+                    : cartItem
+            )
+        );
+    } else {
+        setCart([...cart, { ...item, quantity: 1 }]);
+    }
+};
 
     const totalPrice = cart.reduce((total, item) => total + item.price, 0);
-
-    const removeFromCart = (index) => {
+    const quantity = cart.length;
+    function removeFromCart(index) {
         const newCart = cart.filter((_, i) => i !== index);
         setCart(newCart);
-    };
+    }
     const menu = [
         { id: 1, 
           title: "Burger",
@@ -75,12 +87,27 @@ function Menu() {
               <h3>{item.title}</h3>
               <p>{item.description}</p>
               <h4>Rs {item.price}</h4>
-        <button
-             className="addToCart"
-            type="button"
-            onClick={() => addToCart(item)}>
-            Add to cart
-        </button>
+<div className="quantity-controls">
+    <button
+        className="removeFromCart"
+        type="button"
+        onClick={() => removeFromCart(item.id)}
+    >
+        -
+    </button>
+
+    <span className="quantity">
+        {cart.find((cartItem) => cartItem.id === item.id)?.quantity || 0}
+    </span>
+
+    <button
+        className="addToCart"
+        type="button"
+        onClick={() => addToCart(item)}
+    >
+        +
+    </button>
+</div>
             </div>
                     </li>
                 ))}
@@ -90,7 +117,7 @@ function Menu() {
             <ul>
                 {cart.map((item, index) => (
                     <li key={`Rs${item.id}-${index}`}>
-                        {item.title} - Rs {item.price}
+                        {item.title} - Rs {item.price} x {item.quantity} = Rs {item.price * item.quantity}
 
         <button
             className="removeFromCart"
