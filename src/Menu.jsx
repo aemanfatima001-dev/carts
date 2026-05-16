@@ -29,10 +29,23 @@ const addToCart = (item) => {
 
     const totalPrice = cart.reduce((total, item) => total + item.price, 0);
     const quantity = cart.length;
-    function removeFromCart(index) {
-        const newCart = cart.filter((_, i) => i !== index);
-        setCart(newCart);
+const removeFromCart = (id) => {
+    const existingItem = cart.find((item) => item.id === id);
+
+    if (!existingItem) return;
+
+    if (existingItem.quantity === 1) {
+        setCart(cart.filter((item) => item.id !== id));
+    } else {
+        setCart(
+            cart.map((item) =>
+                item.id === id
+                    ? { ...item, quantity: item.quantity - 1 }
+                    : item
+            )
+        );
     }
+};
     const menu = [
         { id: 1, 
           title: "Burger",
@@ -119,12 +132,7 @@ const addToCart = (item) => {
                     <li key={`Rs${item.id}-${index}`}>
                         {item.title} - Rs {item.price} x {item.quantity} = Rs {item.price * item.quantity}
 
-        <button
-            className="removeFromCart"
-            type="button"
-            onClick={() => removeFromCart(index)}>
-            Remove
-        </button>
+
 
 
                     </li>
