@@ -2,7 +2,7 @@
 import   Menu   from "./Menu";
 
 function App() {
-  return <h1>Resturant Menu</h1>;
+  return <Menu />;
 }
 
-export default Menu;
+export default App;
