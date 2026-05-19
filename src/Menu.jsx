@@ -104,8 +104,7 @@ const removeFromCart = (id) => {
   });
 };    
     
-
-    return (
+  return (
         <div className="menu">
             <h1>Menu</h1>
 
