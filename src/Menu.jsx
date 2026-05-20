@@ -114,7 +114,9 @@ const removeFromCart = (id) => {
     <ul>
         {menu.map((item) => (
           <li key={item.id} className="cart-item">
-            <img className="cart-image" src={item.image} alt={item.title} />
+            <img className="cart-image"
+             src={item.image}
+              alt={item.title} />
             <h3>{item.title}</h3>
             <p>{item.description}</p>
             <h4>Rs {item.price}</h4>
@@ -149,7 +151,10 @@ const removeFromCart = (id) => {
 ) : (
   cart.map((item) => (
     <div key={item.id} className="cart-item-box">
-      <img src={item.image} width="50" />
+      <img 
+      className="cart-image"
+      src={item.image}
+       width="50" />
       <h4>{item.title}</h4>
       <p>Qty: {item.quantity}</p>
       <p>Rs {item.price * item.quantity}</p>
